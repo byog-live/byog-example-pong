@@ -9,7 +9,7 @@ export function setup(game) {
   function moveMouse(e) {
     const y = Math.min(Math.max(40, e.pageY - canvas.offsetTop), canvas.height - 40);
     if (!throttle) {
-      gameChannel.push('trigger', {event: 'move', payload: {y}});
+      game.trigger('move', {y});
       throttle = true;
       setTimeout(() => {
         throttle = false;
@@ -19,7 +19,7 @@ export function setup(game) {
 
   function ready() {
     document.onmousemove = moveMouse;
-    gameChannel.push('trigger', {event: 'ready'});
+    game.trigger('ready');
   }
 
   playButton.onclick = function () {
