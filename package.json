@@ -1,0 +1,8 @@
+{
+  "name": "byog-example-pong",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@byog/sdk": "^1.0.14"
+  }
+}
