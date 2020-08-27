@@ -1,4 +1,4 @@
-const state = {};
+const state = {game: {leftScore: 0, rightScore: 0}};
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const playButton = document.getElementById('playButton');
@@ -48,10 +48,6 @@ export function draw() {
     ctx.fillRect(canvas.width / 2 - size / 2, y, size, size);
   }
 
-  if (!state.game) {
-    return;
-  }
-
   ctx.fillStyle = 'rgba(128,128,128,.6)';
   ctx.font = '48px sans-serif';
   const leftScoreSize = ctx.measureText(state.game.leftScore);
@@ -59,7 +55,7 @@ export function draw() {
   const rightScoreSize = ctx.measureText(state.game.rightScore);
   ctx.fillText(state.game.rightScore, 600 - rightScoreSize.width / 2, 60);
 
-  if (state.game.left && state.game.right) {
+  if (state.game.left && state.game.right && state[state.game.left] && state[state.game.right]) {
     ctx.fillStyle = 'rgba(192,192,192,0.8)';
     ctx.fillRect(0, state[state.game.left].y - 40, 4, 80);
     ctx.fillRect(796, state[state.game.right].y - 40, 4, 80);
