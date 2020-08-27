@@ -1,4 +1,4 @@
-const state = {game: {}};
+const state = {game: {leftScore: 0, rightScore: 0}};
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const playButton = document.getElementById('playButton');
