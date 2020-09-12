@@ -1,1 +1,1 @@
-# byog-example-pong
+# BYOG example Pong
